@@ -1,7 +1,7 @@
 /***************************************************************************
  *
  * Copyright (c) 2017 Baidu.com, Inc. All Rights Reserved
- * @author duanbing(duanbing@baidu.com)
+ * @author XcodeRole(XcodeRole@baidu.com)
  *
  **************************************************************************/
 

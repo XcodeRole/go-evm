@@ -17,8 +17,8 @@
 package runtime
 
 import (
-	"github.com/duanbing/go-evm/core"
-	"github.com/duanbing/go-evm/vm"
+	"github.com/XcodeRole/go-evm/core"
+	"github.com/XcodeRole/go-evm/vm"
 	"github.com/ethereum/go-ethereum/common"
 )
 

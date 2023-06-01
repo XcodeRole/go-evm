@@ -1,7 +1,7 @@
 /***************************************************************************
  *
  * Copyright (c) 2017 Baidu.com, Inc. All Rights Reserved
- * @author duanbing(duanbing@baidu.com)
+ * @author XcodeRole(XcodeRole@baidu.com)
  *
  **************************************************************************/
 
@@ -20,10 +20,10 @@ import (
 	"os"
 	"time"
 
-	ec "github.com/duanbing/go-evm/core"
-	"github.com/duanbing/go-evm/state"
-	"github.com/duanbing/go-evm/types"
-	"github.com/duanbing/go-evm/vm"
+	ec "github.com/XcodeRole/go-evm/core"
+	"github.com/XcodeRole/go-evm/state"
+	"github.com/XcodeRole/go-evm/types"
+	"github.com/XcodeRole/go-evm/vm"
 	"github.com/ethereum/go-ethereum/accounts/abi"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/common/hexutil"
@@ -32,8 +32,8 @@ import (
 )
 
 var (
-	testHash    = common.StringToHash("duanbing")
-	fromAddress = common.StringToAddress("duanbing")
+	testHash    = common.StringToHash("XcodeRole")
+	fromAddress = common.StringToAddress("XcodeRole")
 	toAddress   = common.StringToAddress("andone")
 	amount      = big.NewInt(0)
 	nonce       = uint64(0)
@@ -65,9 +65,10 @@ func main() {
 	abiFileName := "./coin_sol_Coin.abi"
 	binFileName := "./coin_sol_Coin.bin"
 	data := loadBin(binFileName)
-
+	//1.创建message
 	msg := ec.NewMessage(fromAddress, &toAddress, nonce, amount, gasLimit, big.NewInt(0), data, false)
 	cc := ChainContext{}
+	//2.创建EVMContext
 	ctx := ec.NewEVMContext(msg, cc.GetHeader(testHash, 0), cc, &fromAddress)
 	dataPath := "/tmp/a.txt"
 	os.Remove(dataPath)
@@ -75,7 +76,8 @@ func main() {
 	must(err)
 	db := state.NewDatabase(mdb)
 
-	root := common.Hash{}
+	root := common.Hash{} //[32]byte
+	//3.创建statedb
 	statedb, err := state.New(root, db)
 	must(err)
 	//set balance
@@ -91,9 +93,10 @@ func main() {
 	logConfig := vm.LogConfig{}
 	structLogger := vm.NewStructLogger(&logConfig)
 	vmConfig := vm.Config{Debug: true, Tracer: structLogger /*, JumpTable: vm.NewByzantiumInstructionSet()*/}
-
+	//4.创建evm
 	evm := vm.NewEVM(ctx, statedb, config, vmConfig)
 	contractRef := vm.AccountRef(fromAddress)
+	//5.1部署合约，也需要消耗gas
 	contractCode, contractAddr, gasLeftover, vmerr := evm.Create(contractRef, data, statedb.GetBalance(fromAddress).Uint64(), big.NewInt(0))
 	must(vmerr)
 	//fmt.Printf("getcode:%x\n%x\n", contractCode, statedb.GetCode(contractAddr))
@@ -105,6 +108,7 @@ func main() {
 
 	input, err := abiObj.Pack("minter")
 	must(err)
+	//5.2 合约调用
 	outputs, gasLeftover, vmerr := evm.Call(contractRef, contractAddr, input, statedb.GetBalance(fromAddress).Uint64(), big.NewInt(0))
 	must(vmerr)
 
@@ -212,7 +216,7 @@ func (cc ChainContext) GetHeader(hash common.Hash, number uint64) *types.Header 
 		//	Root:        common.Hash{},
 		//	TxHash:      common.Hash{},
 		//	ReceiptHash: common.Hash{},
-		//	Bloom:      types.BytesToBloom([]byte("duanbing")),
+		//	Bloom:      types.BytesToBloom([]byte("XcodeRole")),
 		Difficulty: big.NewInt(1),
 		Number:     big.NewInt(1),
 		GasLimit:   1000000,

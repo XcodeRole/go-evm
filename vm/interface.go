@@ -19,7 +19,7 @@ package vm
 import (
 	"math/big"
 
-	"github.com/duanbing/go-evm/types"
+	"github.com/XcodeRole/go-evm/types"
 	"github.com/ethereum/go-ethereum/common"
 )
 

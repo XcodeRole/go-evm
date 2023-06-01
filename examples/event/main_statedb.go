@@ -1,7 +1,7 @@
 /***************************************************************************
  *
  * Copyright (c) 2017 Baidu.com, Inc. All Rights Reserved
- * @author duanbing(duanbing@baidu.com)
+ * @author XcodeRole(XcodeRole@baidu.com)
  *
  **************************************************************************/
 
@@ -13,7 +13,7 @@
 package main
 
 import (
-	//"github.com/duanbing/go-evm/state"
+	//"github.com/XcodeRole/go-evm/state"
 	"fmt"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/ethdb"

@@ -1,7 +1,7 @@
 /***************************************************************************
  *
  * Copyright (c) 2017 Baidu.com, Inc. All Rights Reserved
- * @author duanbing(duanbing@baidu.com)
+ * @author XcodeRole(XcodeRole@baidu.com)
  *
  **************************************************************************/
 
@@ -15,8 +15,8 @@ package core
 import (
 	"math/big"
 
-	"github.com/duanbing/go-evm/state"
-	"github.com/duanbing/go-evm/types"
+	"github.com/XcodeRole/go-evm/state"
+	"github.com/XcodeRole/go-evm/types"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/ethdb"
 	"github.com/ethereum/go-ethereum/log"

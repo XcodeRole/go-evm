@@ -54,7 +54,7 @@ func TestBloom(t *testing.T) {
 import (
 	"testing"
 
-	"github.com/duanbing/go-evm/state"
+	"github.com/XcodeRole/go-evm/state"
 )
 
 func TestBloom9(t *testing.T) {

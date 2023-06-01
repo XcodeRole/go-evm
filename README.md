@@ -6,7 +6,7 @@ All dependencies is maintained by `godep`.
 
 1. Compile contract
 ```
-cd  $GOPATH/src/github.com/duanbing/go-evm/example/event
+cd  $GOPATH/src/github.com/XcodeRole/go-evm/example/event
 solcjs --abi --bin coin.sol
 ```
 Here we get code in xxx.bin, and abi in xx.abi
@@ -34,7 +34,7 @@ header := types.Header{
     //  Root:        common.Hash{},
     //  TxHash:      common.Hash{},
     //  ReceiptHash: common.Hash{},
-    //  Bloom:      types.BytesToBloom([]byte("duanbing")),
+    //  Bloom:      types.BytesToBloom([]byte("XcodeRole")),
     Difficulty: big.NewInt(1),
     Number:     big.NewInt(1),
     GasLimit:   gasLimit,

@@ -1,7 +1,7 @@
 /***************************************************************************
  *
  * Copyright (c) 2017 Baidu.com, Inc. All Rights Reserved
- * @author duanbing(duanbing@baidu.com)
+ * @author XcodeRole(XcodeRole@baidu.com)
  *
  **************************************************************************/
 
@@ -14,14 +14,14 @@ package main
 
 import (
 	"fmt"
-	ec "github.com/duanbing/go-evm/core"
-	"github.com/duanbing/go-evm/state"
-	"github.com/duanbing/go-evm/vm"
+	ec "github.com/XcodeRole/go-evm/core"
+	"github.com/XcodeRole/go-evm/state"
+	"github.com/XcodeRole/go-evm/vm"
 	"time"
 
 	"math/big"
 
-	"github.com/duanbing/go-evm/types"
+	"github.com/XcodeRole/go-evm/types"
 	"github.com/ethereum/go-ethereum/accounts/abi"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/common/hexutil"
@@ -30,8 +30,8 @@ import (
 )
 
 var (
-	//testHash    = common.StringToHash("duanbing")
-	testAddress = common.StringToAddress("duanbing")
+	//testHash    = common.StringToHash("XcodeRole")
+	testAddress = common.StringToAddress("XcodeRole")
 	toAddress   = common.StringToAddress("andone")
 	amount      = big.NewInt(1)
 	nonce       = uint64(0)
@@ -58,7 +58,7 @@ func main() {
 		//	Root:        common.Hash{},
 		//	TxHash:      common.Hash{},
 		//	ReceiptHash: common.Hash{},
-		//	Bloom:      types.BytesToBloom([]byte("duanbing")),
+		//	Bloom:      types.BytesToBloom([]byte("XcodeRole")),
 		Difficulty: big.NewInt(1),
 		Number:     big.NewInt(1),
 		GasLimit:   gasLimit,

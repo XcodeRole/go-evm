@@ -30,7 +30,7 @@ import (
 
 	check "gopkg.in/check.v1"
 
-	"github.com/duanbing/go-evm/types"
+	"github.com/XcodeRole/go-evm/types"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/ethdb"
 )

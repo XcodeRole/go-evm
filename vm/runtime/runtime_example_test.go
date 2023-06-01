@@ -19,7 +19,7 @@ package runtime_test
 import (
 	"fmt"
 
-	"github.com/duanbing/go-evm/vm/runtime"
+	"github.com/XcodeRole/go-evm/vm/runtime"
 	"github.com/ethereum/go-ethereum/common"
 )
 

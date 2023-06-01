@@ -21,8 +21,8 @@ import (
 	"math/big"
 	"time"
 
-	"github.com/duanbing/go-evm/state"
-	"github.com/duanbing/go-evm/vm"
+	"github.com/XcodeRole/go-evm/state"
+	"github.com/XcodeRole/go-evm/vm"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/crypto"
 	"github.com/ethereum/go-ethereum/ethdb"
